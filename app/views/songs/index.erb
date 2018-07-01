@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>Set-List Songs</title>
-
+    <link rel="stylesheet" type="text/css" href="/master.css"/>
   </head>
   <body>
   <header>Songs</header>
+  <div class="grid">
   <% @songs.each do |song| %>
-  <section class="song-block">
+  <div class="song-block">
     <img class="album-art" src="https://raw.githubusercontent.com/turingschool-examples/set-list-song-index-B2/master/vinyl.jpg">
       <ul>
         <li class="song-title"><%= song.title %></li>
@@ -17,7 +18,7 @@
           <li class="song-pllaylist"> <%= song.playlist.name %></li>
         <% end %>
       </ul>
-  </section>
+  </div>
   <% end %>
   </body>
 </html>
