@@ -1,14 +1,24 @@
-<% @songs.each do |song| %>
-<div class="song-block">
-<img class="album-art" src="https://raw.githubusercontent.com/turingschool-examples/set-list-song-index-B2/master/vinyl.jpg">
-  <ul>
-    <li> <%= song.title %></li>
-    <li> <%= song.length %></li>
-    <li> <%= song.play_count %></li>
-    <% if song.playlist %>
-      <li> <%= song.playlist.name %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Set-List Songs</title>
+
+  </head>
+  <body>
+  <header>Songs</header>
+  <% @songs.each do |song| %>
+  <section class="song-block">
+    <img class="album-art" src="https://raw.githubusercontent.com/turingschool-examples/set-list-song-index-B2/master/vinyl.jpg">
+      <ul>
+        <li class="song-title"><%= song.title %></li>
+        <li class="song-length"> <%= song.length %></li>
+        <li class="song-play-count"> <%= song.play_count %></li>
+        <% if song.playlist %>
+          <li class="song-pllaylist"> <%= song.playlist.name %></li>
+        <% end %>
+      </ul>
+  </section>
+  <% end %>
+  </body>
+</html>
 
