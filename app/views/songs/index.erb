@@ -1,10 +1,25 @@
-<% @songs.each do |song| %>
-  <ul>
-    <li> <%= song.title %></li>
-    <li> <%= song.length %></li>
-    <li> <%= song.play_count %></li>
-    <% if song.playlist %>
-      <li> <%= song.playlist.name %></li>
-    <% end %>
-  </ul>
-<% end %>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Set-List Songs</title>
+    <link rel="stylesheet" type="text/css" href="/master.css"/>
+  </head>
+  <body>
+  <header>Songs</header>
+  <div class="grid">
+  <% @songs.each do |song| %>
+  <div class="song-block">
+    <img class="album-art" src="https://raw.githubusercontent.com/turingschool-examples/set-list-song-index-B2/master/vinyl.jpg">
+      <ul>
+        <li class="song-title"><%= song.title %></li>
+        <li class="song-length"> <%= song.length %></li>
+        <li class="song-play-count"> <%= song.play_count %></li>
+        <% if song.playlist %>
+          <li class="song-pllaylist"> <%= song.playlist.name %></li>
+        <% end %>
+      </ul>
+  </div>
+  <% end %>
+  </body>
+</html>
+
